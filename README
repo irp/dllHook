@@ -1,0 +1,9 @@
+I use loader.cpp to inject the file.dll in the virtual address space of the target process. 
+
+I disassemble the 5 bytes of the target instruction exported from kernel32.dll 
+(OpenProcess in the example try.cpp/try.dll)
+
+and I put an immediate jmp to my Hook routine 
+(a simple call to ExitProcess(0) in the example)
+
+storing the old 5 opcode bytes (with modrm, sib etc.) in a struct called Ponte
