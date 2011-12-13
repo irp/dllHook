@@ -4,7 +4,7 @@
 #include <tchar.h>
 
 int __cdecl main (int argc, 
-	              char **argv) {
+	          char **argv) {
 
 	printf("Select the process: %s", argv[1]);
 	int a = getchar();
