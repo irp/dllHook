@@ -6,4 +6,12 @@ I disassemble the 5 bytes of the target instruction exported from kernel32.dll
 and I put an immediate jmp to my Hook routine 
 (a simple call to ExitProcess(0) in the example)
 
-storing the old 5 opcode bytes (with modrm, sib etc.) in a struct called Ponte
+storing the old 5 opcode bytes (with modrm, sib etc.) in a struct called Ponte.
+
+try.cpp is the file.dll called from the loader. In this file I use
+
+extern "C" VOID NTAPI stuff
+  (__in PBYTE pTar,
+	 __in PVOID pfHook); 
+
+function defined in bitch.h. 
